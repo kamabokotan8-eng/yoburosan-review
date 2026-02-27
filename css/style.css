@@ -323,11 +323,15 @@ img { max-width: 100%; display: block; }
   color: #fff; transition: opacity 0.2s;
 }
 .share-btn:hover { opacity: 0.85; color: #fff; }
-.share-twitter { background: #1da1f2; }
+.share-twitter { background: #000; }
 .share-facebook { background: #1877f2; }
+.share-whatsapp { background: #25d366; }
+.share-telegram { background: #0088cc; }
 .share-line { background: #06c755; }
 .share-reddit { background: #ff4500; }
-.share-whatsapp { background: #25d366; }
+.share-pinterest { background: #e60023; }
+.share-weibo { background: #e6162d; }
+.share-copy { background: var(--surface3); color: var(--text-sub); border: 1px solid var(--border); }
 
 /* GISCUS COMMENTS */
 .comments-section {
