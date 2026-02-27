@@ -4,43 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YOBUROSAN - Snack Reviews</title>
-  <meta name="description" content="Japanese snacks, for the world.">
+  <meta name="description" content="Japanese snacks, for the world. 12 years, 10,000+ reviews">
   <meta property="og:title" content="YOBUROSAN - Snack Reviews">
-  <meta property="og:description" content="Japanese snacks, for the world.">
+  <meta property="og:description" content="Japanese snacks, for the world. 12 years, 10,000+ reviews">
   
   <link rel="canonical" href="/hi/">
-  <link rel="alternate" hreflang="ja" href="/ja/">
-  <link rel="alternate" hreflang="en" href="/en/">
-  <link rel="alternate" hreflang="es" href="/es/">
-  <link rel="alternate" hreflang="fr" href="/fr/">
-  <link rel="alternate" hreflang="de" href="/de/">
-  <link rel="alternate" hreflang="pt" href="/pt/">
-  <link rel="alternate" hreflang="it" href="/it/">
-  <link rel="alternate" hreflang="ru" href="/ru/">
-  <link rel="alternate" hreflang="ko" href="/ko/">
-  <link rel="alternate" hreflang="zh-cn" href="/zh-CN/">
-  <link rel="alternate" hreflang="zh-tw" href="/zh-TW/">
-  <link rel="alternate" hreflang="ar" href="/ar/">
-  <link rel="alternate" hreflang="hi" href="/hi/">
-  <link rel="alternate" hreflang="th" href="/th/">
-  <link rel="alternate" hreflang="vi" href="/vi/">
-  <link rel="alternate" hreflang="id" href="/id/">
-  <link rel="alternate" hreflang="ms" href="/ms/">
-  <link rel="alternate" hreflang="tr" href="/tr/">
-  <link rel="alternate" hreflang="nl" href="/nl/">
-  <link rel="alternate" hreflang="pl" href="/pl/">
-  <link rel="alternate" hreflang="x-default" href="/ja/">
   <link rel="stylesheet" href="/css/style.css">
-  
 </head>
 <body>
-  <header class="header">
-  <div class="header-inner">
-    <a href="/hi/" class="logo">YOBUROSAN<span class="logo-sub">Snack Reviews</span></a>
-    <nav class="nav">
-      <a href="/hi/">Home</a>
-      <a href="https://www.youtube.com/@yoburosan?sub_confirmation=1" target="_blank">Subscribe</a>
-      <select class="lang-btn" onchange="location.href=this.value"><option value="/ja/" >日本語</option>
+  <header class="site-header">
+  <div class="header-top">
+    <a href="/hi/" class="site-logo">
+      YOBUROSAN <span class="logo-sub">Snack Reviews</span>
+    </a>
+    <div class="header-actions">
+      <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">☀ Light</button>
+      <select class="lang-select" onchange="location.href=this.value"><option value="/ja/" >日本語</option>
 <option value="/en/" >English</option>
 <option value="/es/" >Español</option>
 <option value="/fr/" >Français</option>
@@ -60,148 +39,277 @@
 <option value="/tr/" >Türkçe</option>
 <option value="/nl/" >Nederlands</option>
 <option value="/pl/" >Polski</option></select>
-    </nav>
+    </div>
   </div>
+  <nav class="cat-nav">
+    <div class="cat-nav-inner">
+      <a href="/hi/" class="active"><span class="cat-icon">🏠</span>Home</a>
+      <a href="/hi/"><span class="cat-icon">🍫</span>Chocolate</a>
+      <a href="/hi/"><span class="cat-icon">🍿</span>Snacks</a>
+      <a href="/hi/"><span class="cat-icon">🍬</span>Candy</a>
+      <a href="/hi/"><span class="cat-icon">🍦</span>Ice Cream</a>
+      <a href="/hi/"><span class="cat-icon">🥤</span>Drinks</a>
+      <a href="/hi/"><span class="cat-icon">⭐</span>Limited Edition</a>
+    </div>
+  </nav>
 </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-jp">YOBUROSAN</div>
-      <div class="hero-en">Snack Reviews</div>
-      <div class="hero-line"></div>
-      <div class="hero-tagline">Japanese snacks, for the world.</div>
-      <a href="#reviews" class="hero-btn">Explore Reviews</a>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="num">10,068</div><div class="label">Reviews</div></div>
-        <div class="hero-stat"><div class="num">20</div><div class="label">Languages</div></div>
-        <div class="hero-stat"><div class="num">12+</div><div class="label">Years</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="reviews">
-    <div style="max-width:1400px;margin:0 auto;">
-      <div class="section-title">Explore Reviews</div>
-      <div class="section-line"></div>
-      <div class="review-grid">
-        <a href="/hi/review/wF61V3OEdO0/" class="card">
-  <div class="card-img-wrap">
-    <img src="https://img.youtube.com/vi/wF61V3OEdO0/hqdefault.jpg" alt="【宅飲 QBB" loading="lazy">
-    <div class="card-play"></div>
+  <div class="site-main">
+    <main>
+      <a href="/hi/review/wF61V3OEdO0/" class="featured">
+  <div class="featured-img">
+    <img src="https://img.youtube.com/vi/wF61V3OEdO0/maxresdefault.jpg" alt="【宅飲 QBB" loading="eager">
+    <div class="featured-badge">Latest Reviews</div>
+    <div class="featured-play"></div>
   </div>
-  <div class="card-body">
-    <div class="card-title">【宅飲 QBB</div>
-    <div class="card-desc">Yoburo का चैनल में आपका स्वागत है! इस 【】QBB अनबॉक्सिंग और रिव्यू वीडियो को देखें।</div>
-    <div class="card-tags"><span class="card-tag">QBB</span><span class="card-tag">बेबी पनीर</span><span class="card-tag">बादाम</span></div>
+  <div class="featured-body">
+    <div class="featured-cat">QBB</div>
+    <div class="featured-title">【宅飲 QBB</div>
+    <div class="featured-desc">Yoburo का चैनल में आपका स्वागत है! इस 【】QBB अनबॉक्सिंग और रिव्यू वीडियो को देखें।</div>
+    <div class="featured-meta">
+      <span class="views">545K views</span>
+    </div>
   </div>
 </a>
-<a href="/hi/review/8hRyE4hBeUo/" class="card">
-  <div class="card-img-wrap">
+      <div class="article-list">
+        <a href="/hi/review/8hRyE4hBeUo/" class="article-card">
+  <div class="article-thumb">
     <img src="https://img.youtube.com/vi/8hRyE4hBeUo/hqdefault.jpg" alt="中毒性 #लघु वीडियो #asmr #" loading="lazy">
-    <div class="card-play"></div>
+    <div class="play-icon"></div>
   </div>
-  <div class="card-body">
-    <div class="card-title">中毒性 #लघु वीडियो #asmr #</div>
-    <div class="card-desc">Yoburo का चैनल में आपका स्वागत है! इस shorts asmr अनबॉक्सिंग और रिव्यू वीडियो को देखें।</div>
-    <div class="card-tags"><span class="card-tag">Bubble Roll</span><span class="card-tag">バブルロール</span><span class="card-tag">विदेशमिठाई</span></div>
-  </div>
-</a>
-<a href="/hi/review/CIF1jDOo8M0/" class="card">
-  <div class="card-img-wrap">
-    <img src="https://img.youtube.com/vi/CIF1jDOo8M0/hqdefault.jpg" alt="😘 ท๊อป Jack’n Jill Topps Chocolate Wafer Bar URC Thailand" loading="lazy">
-    <div class="card-play"></div>
-  </div>
-  <div class="card-body">
-    <div class="card-title">😘 ท๊อป Jack’n Jill Topps Chocolate Wafer Bar URC Thailand</div>
-    <div class="card-desc">Yoburo का चैनल में आपका स्वागत है! इस 😘ท๊อป Jack’n Jill Topps अनबॉक्सिंग और रिव्यू वीडियो को देखें।</div>
-    <div class="card-tags"><span class="card-tag">अनबॉक्सिंग</span><span class="card-tag">समीक्षा</span><span class="card-tag">मिठाई</span></div>
-  </div>
-</a>
-<a href="/hi/review/a9KP4hUf4YY/" class="card">
-  <div class="card-img-wrap">
-    <img src="https://img.youtube.com/vi/a9KP4hUf4YY/hqdefault.jpg" alt="Product अनबॉक्सिंग और रिव्यू" loading="lazy">
-    <div class="card-play"></div>
-  </div>
-  <div class="card-body">
-    <div class="card-title">Product अनबॉक्सिंग और रिव्यू</div>
-    <div class="card-desc">Yoburo का चैनल में आपका स्वागत है! इस Product अनबॉक्सिंग और रिव्यू वीडियो को देखें।</div>
-    <div class="card-tags"><span class="card-tag">थाईलैंड</span><span class="card-tag">जापान</span><span class="card-tag">比較</span></div>
-  </div>
-</a>
-<a href="/hi/review/7AH8HluFRvc/" class="card">
-  <div class="card-img-wrap">
-    <img src="https://img.youtube.com/vi/7AH8HluFRvc/hqdefault.jpg" alt="😌😌 ฮอลล์ Halls" loading="lazy">
-    <div class="card-play"></div>
-  </div>
-  <div class="card-body">
-    <div class="card-title">😌😌 ฮอลล์ Halls</div>
-    <div class="card-desc">Yoburo का चैनल में आपका स्वागत है! इस 😌ฮอลล์ Halls😌 अनबॉक्सिंग और रिव्यू वीडियो को देखें।</div>
-    <div class="card-tags"><span class="card-tag">अनबॉक्सिंग</span><span class="card-tag">समीक्षा</span><span class="card-tag">मिठाई</span></div>
-  </div>
-</a>
-<a href="/hi/review/PfQlvDFoebI/" class="card">
-  <div class="card-img-wrap">
-    <img src="https://img.youtube.com/vi/PfQlvDFoebI/hqdefault.jpg" alt="😋 Stikko Fingers Potato अनबॉक्सिंग और रिव्यू" loading="lazy">
-    <div class="card-play"></div>
-  </div>
-  <div class="card-body">
-    <div class="card-title">😋 Stikko Fingers Potato अनबॉक्सिंग और रिव्यू</div>
-    <div class="card-desc">Crunchy wafer sticks filled with smooth milk cream. </div>
-    <div class="card-tags"><span class="card-tag">अनबॉक्सिंग</span><span class="card-tag">समीक्षा</span><span class="card-tag">मिठाई</span></div>
-  </div>
-</a>
-<a href="/hi/review/auuREHBybMs/" class="card">
-  <div class="card-img-wrap">
-    <img src="https://img.youtube.com/vi/auuREHBybMs/hqdefault.jpg" alt="😌 Product अनबॉक्सिंग और रिव्यू" loading="lazy">
-    <div class="card-play"></div>
-  </div>
-  <div class="card-body">
-    <div class="card-title">😌 Product अनबॉक्सिंग और रिव्यू</div>
-    <div class="card-desc">Yoburo का चैनल में आपका स्वागत है! इस Product अनबॉक्सिंग और रिव्यू वीडियो को देखें।</div>
-    <div class="card-tags"><span class="card-tag">अनबॉक्सिंग</span><span class="card-tag">समीक्षा</span><span class="card-tag">मिठाई</span></div>
-  </div>
-</a>
-<a href="/hi/review/ZHsZwkrDNko/" class="card">
-  <div class="card-img-wrap">
-    <img src="https://img.youtube.com/vi/ZHsZwkrDNko/hqdefault.jpg" alt="😇🍋 AYA Sour Lemon Candy" loading="lazy">
-    <div class="card-play"></div>
-  </div>
-  <div class="card-body">
-    <div class="card-title">😇🍋 AYA Sour Lemon Candy</div>
-    <div class="card-desc">Yoburo का चैनल में आपका स्वागत है! इस AYA Sour Lemon Candy🍋 अनबॉक्सिंग और रिव्यू वीडियो को देखें।</div>
-    <div class="card-tags"><span class="card-tag">अनबॉक्सिंग</span><span class="card-tag">समीक्षा</span><span class="card-tag">मिठाई</span></div>
-  </div>
-</a>
-<a href="/hi/review/L8rRg2H33F8/" class="card">
-  <div class="card-img-wrap">
-    <img src="https://img.youtube.com/vi/L8rRg2H33F8/hqdefault.jpg" alt="年最新 2026" loading="lazy">
-    <div class="card-play"></div>
-  </div>
-  <div class="card-body">
-    <div class="card-title">年最新 2026</div>
-    <div class="card-desc">Yoburo का चैनल में आपका स्वागत है! इस 2026！😋ｗｗｗ अनबॉक्सिंग और रिव्यू वीडियो को देखें।</div>
-    <div class="card-tags"><span class="card-tag">メントス</span><span class="card-tag">Mentos</span><span class="card-tag">実験</span></div>
-  </div>
-</a>
-<a href="/hi/review/qe-5aOHXB8g/" class="card">
-  <div class="card-img-wrap">
-    <img src="https://img.youtube.com/vi/qe-5aOHXB8g/hqdefault.jpg" alt="Product Review" loading="lazy">
-    <div class="card-play"></div>
-  </div>
-  <div class="card-body">
-    <div class="card-title">Product Review</div>
-    <div class="card-desc">इस अद्भुत स्नैक्स उत्पाद की हमारी समीक्षा देखें! </div>
-    <div class="card-tags"><span class="card-tag">स्नैक्स रिव्यू</span><span class="card-tag">अनबॉक्सिंग</span><span class="card-tag">खाद्य समीक्षा</span></div>
-  </div>
-</a>
-      </div>
+  <div class="article-body">
+    <div class="article-cat">Bubble Roll</div>
+    <div class="article-title">中毒性 #लघु वीडियो #asmr #</div>
+    <div class="article-desc">Yoburo का चैनल में आपका स्वागत है! इस shorts asmr अनबॉक्सिंग और रिव्यू वीडियो को देखें।</div>
+    <div class="article-tags"><span class="article-tag">Bubble Roll</span><span class="article-tag">バブルロール</span></div>
+    <div class="article-meta">
+      <span>▶ 728K views</span>
     </div>
-  </section>
+  </div>
+</a>
+<a href="/hi/review/CIF1jDOo8M0/" class="article-card">
+  <div class="article-thumb">
+    <img src="https://img.youtube.com/vi/CIF1jDOo8M0/hqdefault.jpg" alt="😘 ท๊อป Jack’n Jill Topps Chocolate Wafer Bar URC Thailand" loading="lazy">
+    <div class="play-icon"></div>
+  </div>
+  <div class="article-body">
+    <div class="article-cat">अनबॉक्सिंग</div>
+    <div class="article-title">😘 ท๊อป Jack’n Jill Topps Chocolate Wafer Bar URC Thailand</div>
+    <div class="article-desc">Yoburo का चैनल में आपका स्वागत है! इस 😘ท๊อป Jack’n Jill Topps अनबॉक्सिंग और रिव्यू वीडियो को देखें।</div>
+    <div class="article-tags"><span class="article-tag">अनबॉक्सिंग</span><span class="article-tag">समीक्षा</span></div>
+    <div class="article-meta">
+      <span>▶ 949K views</span>
+    </div>
+  </div>
+</a>
+<a href="/hi/review/a9KP4hUf4YY/" class="article-card">
+  <div class="article-thumb">
+    <img src="https://img.youtube.com/vi/a9KP4hUf4YY/hqdefault.jpg" alt="Product अनबॉक्सिंग और रिव्यू" loading="lazy">
+    <div class="play-icon"></div>
+  </div>
+  <div class="article-body">
+    <div class="article-cat">थाईलैंड</div>
+    <div class="article-title">Product अनबॉक्सिंग और रिव्यू</div>
+    <div class="article-desc">Yoburo का चैनल में आपका स्वागत है! इस Product अनबॉक्सिंग और रिव्यू वीडियो को देखें।</div>
+    <div class="article-tags"><span class="article-tag">थाईलैंड</span><span class="article-tag">जापान</span></div>
+    <div class="article-meta">
+      <span>▶ 953K views</span>
+    </div>
+  </div>
+</a>
+<a href="/hi/review/7AH8HluFRvc/" class="article-card">
+  <div class="article-thumb">
+    <img src="https://img.youtube.com/vi/7AH8HluFRvc/hqdefault.jpg" alt="😌😌 ฮอลล์ Halls" loading="lazy">
+    <div class="play-icon"></div>
+  </div>
+  <div class="article-body">
+    <div class="article-cat">अनबॉक्सिंग</div>
+    <div class="article-title">😌😌 ฮอลล์ Halls</div>
+    <div class="article-desc">Yoburo का चैनल में आपका स्वागत है! इस 😌ฮอลล์ Halls😌 अनबॉक्सिंग और रिव्यू वीडियो को देखें।</div>
+    <div class="article-tags"><span class="article-tag">अनबॉक्सिंग</span><span class="article-tag">समीक्षा</span></div>
+    <div class="article-meta">
+      <span>▶ 513K views</span>
+    </div>
+  </div>
+</a>
+<a href="/hi/review/PfQlvDFoebI/" class="article-card">
+  <div class="article-thumb">
+    <img src="https://img.youtube.com/vi/PfQlvDFoebI/hqdefault.jpg" alt="😋 Stikko Fingers Potato अनबॉक्सिंग और रिव्यू" loading="lazy">
+    <div class="play-icon"></div>
+  </div>
+  <div class="article-body">
+    <div class="article-cat">अनबॉक्सिंग</div>
+    <div class="article-title">😋 Stikko Fingers Potato अनबॉक्सिंग और रिव्यू</div>
+    <div class="article-desc">Crunchy wafer sticks filled with smooth milk cream. </div>
+    <div class="article-tags"><span class="article-tag">अनबॉक्सिंग</span><span class="article-tag">समीक्षा</span></div>
+    <div class="article-meta">
+      <span>▶ 781K views</span>
+    </div>
+  </div>
+</a>
+<a href="/hi/review/auuREHBybMs/" class="article-card">
+  <div class="article-thumb">
+    <img src="https://img.youtube.com/vi/auuREHBybMs/hqdefault.jpg" alt="😌 Product अनबॉक्सिंग और रिव्यू" loading="lazy">
+    <div class="play-icon"></div>
+  </div>
+  <div class="article-body">
+    <div class="article-cat">अनबॉक्सिंग</div>
+    <div class="article-title">😌 Product अनबॉक्सिंग और रिव्यू</div>
+    <div class="article-desc">Yoburo का चैनल में आपका स्वागत है! इस Product अनबॉक्सिंग और रिव्यू वीडियो को देखें।</div>
+    <div class="article-tags"><span class="article-tag">अनबॉक्सिंग</span><span class="article-tag">समीक्षा</span></div>
+    <div class="article-meta">
+      <span>▶ 125K views</span>
+    </div>
+  </div>
+</a>
+<a href="/hi/review/ZHsZwkrDNko/" class="article-card">
+  <div class="article-thumb">
+    <img src="https://img.youtube.com/vi/ZHsZwkrDNko/hqdefault.jpg" alt="😇🍋 AYA Sour Lemon Candy" loading="lazy">
+    <div class="play-icon"></div>
+  </div>
+  <div class="article-body">
+    <div class="article-cat">अनबॉक्सिंग</div>
+    <div class="article-title">😇🍋 AYA Sour Lemon Candy</div>
+    <div class="article-desc">Yoburo का चैनल में आपका स्वागत है! इस AYA Sour Lemon Candy🍋 अनबॉक्सिंग और रिव्यू वीडियो को देखें।</div>
+    <div class="article-tags"><span class="article-tag">अनबॉक्सिंग</span><span class="article-tag">समीक्षा</span></div>
+    <div class="article-meta">
+      <span>▶ 798K views</span>
+    </div>
+  </div>
+</a>
+<a href="/hi/review/L8rRg2H33F8/" class="article-card">
+  <div class="article-thumb">
+    <img src="https://img.youtube.com/vi/L8rRg2H33F8/hqdefault.jpg" alt="年最新 2026" loading="lazy">
+    <div class="play-icon"></div>
+  </div>
+  <div class="article-body">
+    <div class="article-cat">メントス</div>
+    <div class="article-title">年最新 2026</div>
+    <div class="article-desc">Yoburo का चैनल में आपका स्वागत है! इस 2026！😋ｗｗｗ अनबॉक्सिंग और रिव्यू वीडियो को देखें।</div>
+    <div class="article-tags"><span class="article-tag">メントス</span><span class="article-tag">Mentos</span></div>
+    <div class="article-meta">
+      <span>▶ 889K views</span>
+    </div>
+  </div>
+</a>
+<a href="/hi/review/qe-5aOHXB8g/" class="article-card">
+  <div class="article-thumb">
+    <img src="https://img.youtube.com/vi/qe-5aOHXB8g/hqdefault.jpg" alt="Product Review" loading="lazy">
+    <div class="play-icon"></div>
+  </div>
+  <div class="article-body">
+    <div class="article-cat">स्नैक्स रिव्यू</div>
+    <div class="article-title">Product Review</div>
+    <div class="article-desc">इस अद्भुत स्नैक्स उत्पाद की हमारी समीक्षा देखें! </div>
+    <div class="article-tags"><span class="article-tag">स्नैक्स रिव्यू</span><span class="article-tag">अनबॉक्सिंग</span></div>
+    <div class="article-meta">
+      <span>▶ 457K views</span>
+    </div>
+  </div>
+</a>
+
+      </div>
+    </main>
+    <aside class="sidebar">
+
+  <div class="yt-cta">
+    <div class="yt-cta-title">📺 YOBUROSAN</div>
+    <div class="yt-cta-sub">YouTube - 10,068 videos</div>
+    <a href="https://www.youtube.com/@yoburosan?sub_confirmation=1" target="_blank" class="yt-cta-btn">
+      Subscribe ▶
+    </a>
+  </div>
+
+  <div class="sidebar-box">
+    <div class="sidebar-heading"><span class="icon">🔥</span> Popular Reviews</div>
+    <a href="/hi/review/YQlZwAGScv8/" class="popular-item">
+  <div class="popular-rank">1</div>
+  <div class="popular-thumb"><img src="https://img.youtube.com/vi/YQlZwAGScv8/mqdefault.jpg" alt="" loading="lazy"></div>
+  <div class="popular-info">
+    <div class="popular-title">🎄साल के आखिरी पसंदीदा मिठाइयों का खुलासा! 2025 का अंतिम अनबॉ</div>
+    <div class="popular-views">▶ 998K views</div>
+  </div>
+</a><a href="/hi/review/ZRqhv8NM5-A/" class="popular-item">
+  <div class="popular-rank">2</div>
+  <div class="popular-thumb"><img src="https://img.youtube.com/vi/ZRqhv8NM5-A/mqdefault.jpg" alt="" loading="lazy"></div>
+  <div class="popular-info">
+    <div class="popular-title">🇯 उत्पाद</div>
+    <div class="popular-views">▶ 996K views</div>
+  </div>
+</a><a href="/hi/review/1EqLYh0gUqI/" class="popular-item">
+  <div class="popular-rank">3</div>
+  <div class="popular-thumb"><img src="https://img.youtube.com/vi/1EqLYh0gUqI/mqdefault.jpg" alt="" loading="lazy"></div>
+  <div class="popular-info">
+    <div class="popular-title">🇻 उत्पाद</div>
+    <div class="popular-views">▶ 994K views</div>
+  </div>
+</a><a href="/hi/review/tpuhCL5xV_A/" class="popular-item">
+  <div class="popular-rank">4</div>
+  <div class="popular-thumb"><img src="https://img.youtube.com/vi/tpuhCL5xV_A/mqdefault.jpg" alt="" loading="lazy"></div>
+  <div class="popular-info">
+    <div class="popular-title">🇻 उत्पाद</div>
+    <div class="popular-views">▶ 994K views</div>
+  </div>
+</a><a href="/hi/review/GgEfHnGmc6g/" class="popular-item">
+  <div class="popular-rank">5</div>
+  <div class="popular-thumb"><img src="https://img.youtube.com/vi/GgEfHnGmc6g/mqdefault.jpg" alt="" loading="lazy"></div>
+  <div class="popular-info">
+    <div class="popular-title">🇯 उत्पाद</div>
+    <div class="popular-views">▶ 993K views</div>
+  </div>
+</a>
+  </div>
+
+  <div class="sidebar-box">
+    <div class="sidebar-heading"><span class="icon">📂</span> Categories</div>
+    <div class="cat-list">
+      <a href="/hi/" class="cat-item"><span>🍫 Chocolate</span><span class="cat-count">2,100+</span></a>
+<a href="/hi/" class="cat-item"><span>🍿 Snacks</span><span class="cat-count">3,400+</span></a>
+<a href="/hi/" class="cat-item"><span>🍬 Candy</span><span class="cat-count">1,800+</span></a>
+<a href="/hi/" class="cat-item"><span>🍦 Ice Cream</span><span class="cat-count">950+</span></a>
+<a href="/hi/" class="cat-item"><span>🥤 Drinks</span><span class="cat-count">1,200+</span></a>
+<a href="/hi/" class="cat-item"><span>⭐ Limited Edition</span><span class="cat-count">600+</span></a>
+    </div>
+  </div>
+
+  <div class="sidebar-box">
+    <div class="sidebar-heading"><span class="icon">ℹ️</span> About</div>
+    <div class="about-box">
+      <p class="about-text">YOBUROSAN is a YouTube channel with over 10,000 Japanese snack reviews spanning 12 years. This site features every review in 20 languages.</p>
+    </div>
+  </div>
+
+</aside>
+  </div>
 
   <div class="lang-bar"><a href="/ja/">日本語</a><a href="/en/">English</a><a href="/es/">Español</a><a href="/fr/">Français</a><a href="/de/">Deutsch</a><a href="/pt/">Português</a><a href="/it/">Italiano</a><a href="/ru/">Русский</a><a href="/ko/">한국어</a><a href="/zh-CN/">简体中文</a><a href="/zh-TW/">繁體中文</a><a href="/ar/">العربية</a><a href="/hi/" class="active">हिन्दी</a><a href="/th/">ไทย</a><a href="/vi/">Tiếng Việt</a><a href="/id/">Bahasa Indonesia</a><a href="/ms/">Bahasa Melayu</a><a href="/tr/">Türkçe</a><a href="/nl/">Nederlands</a><a href="/pl/">Polski</a></div>
-  <footer class="footer">
+  <footer class="site-footer">
   <div class="footer-logo">YOBUROSAN</div>
-  <p class="footer-copy">&copy; 2026 YOBUROSAN &middot; <a href="https://www.youtube.com/@yoburosan">YouTube</a></p>
+  <p class="footer-copy">&copy; 2026 YOBUROSAN &middot; <a href="https://www.youtube.com/@yoburosan" target="_blank">YouTube</a></p>
 </footer>
+  <script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const btn = document.getElementById('themeBtn');
+  if (html.getAttribute('data-theme') === 'light') {
+    html.removeAttribute('data-theme');
+    btn.textContent = '☀ Light';
+    localStorage.setItem('theme', 'dark');
+  } else {
+    html.setAttribute('data-theme', 'light');
+    btn.textContent = '🌙 Dark';
+    localStorage.setItem('theme', 'light');
+  }
+}
+(function() {
+  if (localStorage.getItem('theme') === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('themeBtn');
+      if (btn) btn.textContent = '🌙 Dark';
+    });
+  }
+})();
+</script>
 </body>
 </html>
