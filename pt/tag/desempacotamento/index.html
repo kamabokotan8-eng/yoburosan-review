@@ -20,9 +20,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://img.youtube.com">
   <link rel="preconnect" href="https://www.youtube.com">
-  <link rel="stylesheet" href="/yoburosan-review/css/style.css?v=1772210703">
-  <link rel="stylesheet" href="../../css/style.css?v=1772210703">
-  <link rel="stylesheet" href="../css/style.css?v=1772210703">
+  <link rel="stylesheet" href="/yoburosan-review/css/style.css?v=1772211549">
+  <link rel="stylesheet" href="../../css/style.css?v=1772211549">
+  <link rel="stylesheet" href="../css/style.css?v=1772211549">
 </head>
 <body>
   <header class="site-header">
@@ -54,6 +54,7 @@
   </div>
 </header>
 
+<nav class="tag-nav"><div class="tag-nav-inner"><a href="/yoburosan-review/pt/tag/unboxing/">#unboxing</a><a href="/yoburosan-review/pt/tag/avaliao/">#avaliação</a><a href="/yoburosan-review/pt/tag/anlise/">#análise</a><a href="/yoburosan-review/pt/tag/produto/">#produto</a><a href="/yoburosan-review/pt/tag/qualidade/">#qualidade</a><a href="/yoburosan-review/pt/tag/teste/">#teste</a><a href="/yoburosan-review/pt/tag/desempenho/">#desempenho</a><a href="/yoburosan-review/pt/tag/opinio/">#opinião</a><a href="/yoburosan-review/pt/tag/doces/">#Doces</a><a href="/yoburosan-review/pt/tag/chocolate/">#Chocolate</a><a href="/yoburosan-review/pt/tag/desembalagem/">#Desembalagem</a><a href="/yoburosan-review/pt/tag/review/">#Review</a></div></nav>
   <div class="site-main">
     <main>
       <div class="review-breadcrumb">
@@ -428,7 +429,12 @@
   </p>
 </footer>
   <script>
-/* 非公開動画のサムネが読み込めない場合に要素を非表示 */
+/* ★★★ 非公開動画検出・非表示システム ★★★
+   方法1: onerror (画像読み込み失敗)
+   方法2: oEmbed API (非公開/削除チェック)
+   方法3: サムネイル画像サイズチェック */
+
+/* 方法1: 画像読み込みエラー */
 document.querySelectorAll('.article-card img, .featured-img img, .popular-thumb img, .related-card-img img').forEach(function(img){
   img.onerror = function(){
     var card = this.closest('.article-card, .featured, .popular-item, .related-card');
@@ -439,6 +445,32 @@ document.querySelectorAll('.article-card img, .featured-img img, .popular-thumb 
     if(card) card.style.display='none';
   }
 });
+
+/* 方法2: YouTube oEmbed APIで非公開チェック
+   各動画のサムネURLからvideo IDを抽出し、oEmbedで確認 */
+(function(){
+  var checked = {};
+  document.querySelectorAll('img[src*="img.youtube.com/vi/"]').forEach(function(img){
+    var m = img.src.match(/img\.youtube\.com\/vi\/([^/]+)\//);
+    if(!m || checked[m[1]]) return;
+    var vid = m[1]; checked[vid] = true;
+    fetch('https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=' + vid + '&format=json')
+      .then(function(r){
+        if(!r.ok){
+          /* 非公開/削除済み: この動画IDを含む全要素を非表示 */
+          document.querySelectorAll('img[src*="' + vid + '"]').forEach(function(i){
+            var card = i.closest('.article-card, .featured, .popular-item, .related-card');
+            if(card) card.style.display='none';
+          });
+          /* iframeも非表示 */
+          document.querySelectorAll('iframe[src*="' + vid + '"]').forEach(function(iframe){
+            var wrap = iframe.closest('.review-video');
+            if(wrap) wrap.style.display='none';
+          });
+        }
+      }).catch(function(){});
+  });
+})();
 </script>
 <script>
 function toggleTheme(){

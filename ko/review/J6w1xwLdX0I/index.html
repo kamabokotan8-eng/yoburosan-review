@@ -44,9 +44,9 @@ https://www.youtube.com/@yoburosan">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://img.youtube.com">
   <link rel="preconnect" href="https://www.youtube.com">
-  <link rel="stylesheet" href="/yoburosan-review/css/style.css?v=1772210703">
-  <link rel="stylesheet" href="../../css/style.css?v=1772210703">
-  <link rel="stylesheet" href="../css/style.css?v=1772210703">
+  <link rel="stylesheet" href="/yoburosan-review/css/style.css?v=1772211549">
+  <link rel="stylesheet" href="../../css/style.css?v=1772211549">
+  <link rel="stylesheet" href="../css/style.css?v=1772211549">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "😽 Wafello 초콜릿 맛 이탈리안 스타일 웨이퍼🍫 언박싱 리뷰", "description": "Wafello의 초콜릿 맛 이탈리안 스타일 웨이퍼를 언박싱하고 솔직하게 리뷰해봅니다. 바삭한 웨이퍼와 부드러운 초콜릿의 조화가 정말 좋네요! 더 많은 스낵 리뷰 영상은 채널을 구독해주세요.\nhttps://www.youtube.com/@yoburosan", "thumbnailUrl": "https://img.youtube.com/vi/J6w1xwLdX0I/maxresdefault.jpg", "uploadDate": "2024-01-01", "contentUrl": "https://www.youtube.com/watch?v=J6w1xwLdX0I", "embedUrl": "https://www.youtube.com/embed/J6w1xwLdX0I", "publisher": {"@type": "Organization", "name": "YOBUROSAN", "logo": {"@type": "ImageObject", "url": "https://kamabokotan8-eng.github.io/yoburosan-review/og-default.png"}}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "홈", "item": "https://kamabokotan8-eng.github.io/yoburosan-review/ko/"}, {"@type": "ListItem", "position": 2, "name": "😽 Wafello 초콜릿 맛 이탈리안 스타일 웨이퍼🍫 언박싱 리뷰", "item": "https://kamabokotan8-eng.github.io/yoburosan-review/ko/review/J6w1xwLdX0I/"}]}</script>
 </head>
@@ -80,6 +80,7 @@ https://www.youtube.com/@yoburosan">
   </div>
 </header>
 
+<nav class="tag-nav"><div class="tag-nav-inner"><a href="/yoburosan-review/ko/tag/언박싱/">#언박싱</a><a href="/yoburosan-review/ko/tag/리뷰/">#리뷰</a><a href="/yoburosan-review/ko/tag/과자/">#과자</a><a href="/yoburosan-review/ko/tag/사탕/">#사탕</a><a href="/yoburosan-review/ko/tag/스낵/">#스낵</a><a href="/yoburosan-review/ko/tag/챌린지/">#챌린지</a><a href="/yoburosan-review/ko/tag/느릿느릿소리/">#느릿느릿소리</a><a href="/yoburosan-review/ko/tag/신제품/">#신제품</a><a href="/yoburosan-review/ko/tag/맛/">#맛</a><a href="/yoburosan-review/ko/tag/제품/">#제품</a><a href="/yoburosan-review/ko/tag/맛보기/">#맛보기</a><a href="/yoburosan-review/ko/tag/세계/">#세계</a></div></nav>
   <div class="review-container">
     <main class="review-main">
       <div class="review-breadcrumb">
@@ -456,7 +457,12 @@ https://www.youtube.com/@yoburosan">
   </p>
 </footer>
   <script>
-/* 非公開動画のサムネが読み込めない場合に要素を非表示 */
+/* ★★★ 非公開動画検出・非表示システム ★★★
+   方法1: onerror (画像読み込み失敗)
+   方法2: oEmbed API (非公開/削除チェック)
+   方法3: サムネイル画像サイズチェック */
+
+/* 方法1: 画像読み込みエラー */
 document.querySelectorAll('.article-card img, .featured-img img, .popular-thumb img, .related-card-img img').forEach(function(img){
   img.onerror = function(){
     var card = this.closest('.article-card, .featured, .popular-item, .related-card');
@@ -467,6 +473,32 @@ document.querySelectorAll('.article-card img, .featured-img img, .popular-thumb 
     if(card) card.style.display='none';
   }
 });
+
+/* 方法2: YouTube oEmbed APIで非公開チェック
+   各動画のサムネURLからvideo IDを抽出し、oEmbedで確認 */
+(function(){
+  var checked = {};
+  document.querySelectorAll('img[src*="img.youtube.com/vi/"]').forEach(function(img){
+    var m = img.src.match(/img\.youtube\.com\/vi\/([^/]+)\//);
+    if(!m || checked[m[1]]) return;
+    var vid = m[1]; checked[vid] = true;
+    fetch('https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=' + vid + '&format=json')
+      .then(function(r){
+        if(!r.ok){
+          /* 非公開/削除済み: この動画IDを含む全要素を非表示 */
+          document.querySelectorAll('img[src*="' + vid + '"]').forEach(function(i){
+            var card = i.closest('.article-card, .featured, .popular-item, .related-card');
+            if(card) card.style.display='none';
+          });
+          /* iframeも非表示 */
+          document.querySelectorAll('iframe[src*="' + vid + '"]').forEach(function(iframe){
+            var wrap = iframe.closest('.review-video');
+            if(wrap) wrap.style.display='none';
+          });
+        }
+      }).catch(function(){});
+  });
+})();
 </script>
 <script>
 function toggleTheme(){

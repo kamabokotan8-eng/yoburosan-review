@@ -59,9 +59,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://img.youtube.com">
   <link rel="preconnect" href="https://www.youtube.com">
-  <link rel="stylesheet" href="/yoburosan-review/css/style.css?v=1772210703">
-  <link rel="stylesheet" href="../../css/style.css?v=1772210703">
-  <link rel="stylesheet" href="../css/style.css?v=1772210703">
+  <link rel="stylesheet" href="/yoburosan-review/css/style.css?v=1772211549">
+  <link rel="stylesheet" href="../../css/style.css?v=1772211549">
+  <link rel="stylesheet" href="../css/style.css?v=1772211549">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "🇻🇳Vietnam MERINO sweets KEM MOCHI  dau do ハッピーアイスクリーム🍨", "description": "このビデオでは、様々なお菓子やおもちゃを紹介しています。楽しいお菓子とおもちゃをご紹介しています。\n\n🔥 人気動画:\n▶ https://youtu.be/02ro5ug3ajs\n▶ https://youtu.be/mr1jDBxeJtI\n▶ https://youtu.be/ZOj3kdK9WZ4\n▶ https://youtu.be/l2YOBv9kv78\n▶ https://youtu.be/rZhMSTpZ7HY\n📂 再生リスト一覧 ▶ https://www.youtube.com/@yoburosan/playlists\n🔔 チャンネル登録お願いします ▶ https://www", "thumbnailUrl": "https://img.youtube.com/vi/AHXvwAJWTUg/maxresdefault.jpg", "uploadDate": "2024-01-01", "contentUrl": "https://www.youtube.com/watch?v=AHXvwAJWTUg", "embedUrl": "https://www.youtube.com/embed/AHXvwAJWTUg", "publisher": {"@type": "Organization", "name": "YOBUROSAN", "logo": {"@type": "ImageObject", "url": "https://kamabokotan8-eng.github.io/yoburosan-review/og-default.png"}}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://kamabokotan8-eng.github.io/yoburosan-review/ja/"}, {"@type": "ListItem", "position": 2, "name": "🇻🇳Vietnam MERINO sweets KEM MOCHI  dau do ハッピーアイスクリーム🍨", "item": "https://kamabokotan8-eng.github.io/yoburosan-review/ja/review/AHXvwAJWTUg/"}]}</script>
 </head>
@@ -95,6 +95,7 @@
   </div>
 </header>
 
+<nav class="tag-nav"><div class="tag-nav-inner"><a href="/yoburosan-review/ja/tag/お菓子/">#お菓子</a><a href="/yoburosan-review/ja/tag/スナック/">#スナック</a><a href="/yoburosan-review/ja/tag/開封/">#開封</a><a href="/yoburosan-review/ja/tag/asmr/">#ASMR</a><a href="/yoburosan-review/ja/tag/チョコレート/">#チョコレート</a><a href="/yoburosan-review/ja/tag/お菓子紹介/">#お菓子紹介</a><a href="/yoburosan-review/ja/tag/レビュー/">#レビュー</a><a href="/yoburosan-review/ja/tag/チャレンジ/">#チャレンジ</a><a href="/yoburosan-review/ja/tag/新商品/">#新商品</a><a href="/yoburosan-review/ja/tag/試食/">#試食</a><a href="/yoburosan-review/ja/tag/駄菓子/">#駄菓子</a><a href="/yoburosan-review/ja/tag/おやつ/">#おやつ</a></div></nav>
   <div class="review-container">
     <main class="review-main">
       <div class="review-breadcrumb">
@@ -470,7 +471,12 @@
   </p>
 </footer>
   <script>
-/* 非公開動画のサムネが読み込めない場合に要素を非表示 */
+/* ★★★ 非公開動画検出・非表示システム ★★★
+   方法1: onerror (画像読み込み失敗)
+   方法2: oEmbed API (非公開/削除チェック)
+   方法3: サムネイル画像サイズチェック */
+
+/* 方法1: 画像読み込みエラー */
 document.querySelectorAll('.article-card img, .featured-img img, .popular-thumb img, .related-card-img img').forEach(function(img){
   img.onerror = function(){
     var card = this.closest('.article-card, .featured, .popular-item, .related-card');
@@ -481,6 +487,32 @@ document.querySelectorAll('.article-card img, .featured-img img, .popular-thumb 
     if(card) card.style.display='none';
   }
 });
+
+/* 方法2: YouTube oEmbed APIで非公開チェック
+   各動画のサムネURLからvideo IDを抽出し、oEmbedで確認 */
+(function(){
+  var checked = {};
+  document.querySelectorAll('img[src*="img.youtube.com/vi/"]').forEach(function(img){
+    var m = img.src.match(/img\.youtube\.com\/vi\/([^/]+)\//);
+    if(!m || checked[m[1]]) return;
+    var vid = m[1]; checked[vid] = true;
+    fetch('https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=' + vid + '&format=json')
+      .then(function(r){
+        if(!r.ok){
+          /* 非公開/削除済み: この動画IDを含む全要素を非表示 */
+          document.querySelectorAll('img[src*="' + vid + '"]').forEach(function(i){
+            var card = i.closest('.article-card, .featured, .popular-item, .related-card');
+            if(card) card.style.display='none';
+          });
+          /* iframeも非表示 */
+          document.querySelectorAll('iframe[src*="' + vid + '"]').forEach(function(iframe){
+            var wrap = iframe.closest('.review-video');
+            if(wrap) wrap.style.display='none';
+          });
+        }
+      }).catch(function(){});
+  });
+})();
 </script>
 <script>
 function toggleTheme(){

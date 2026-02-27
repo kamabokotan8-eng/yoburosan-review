@@ -502,14 +502,15 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.3px;
 }
 .share-btn:hover { opacity: 0.85; color: #fff; transform: translateY(-1px); }
-.share-twitter { background: #1a1a1a; }
-.share-facebook { background: #1a3a6e; }
-.share-whatsapp { background: #1a5e3a; }
-.share-telegram { background: #1a4a6e; }
-.share-line { background: #1a5a3a; }
-.share-reddit { background: #8a2a00; }
-.share-pinterest { background: #7a0016; }
-.share-weibo { background: #8a1020; }
+/* 世界標準ブランドカラー */
+.share-twitter { background: #000000; }
+.share-facebook { background: #1877F2; }
+.share-whatsapp { background: #25D366; }
+.share-telegram { background: #0088CC; }
+.share-line { background: #06C755; }
+.share-reddit { background: #FF4500; }
+.share-pinterest { background: #E60023; }
+.share-weibo { background: #E6162D; }
 .share-copy { background: var(--surface3); color: var(--gold); border: 1px solid var(--border-ornament); }
 
 /* ═══════════════════════════════════════
