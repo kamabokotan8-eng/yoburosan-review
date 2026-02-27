@@ -1,1 +1,24 @@
-<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=/yoburosan-review/ja/"></head></html>
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>YOBUROSAN - Japanese Snack Reviews</title>
+<script>
+(function() {
+  var map = {"ja": "/yoburosan-review/ja/", "en": "/yoburosan-review/en/", "es": "/yoburosan-review/es/", "fr": "/yoburosan-review/fr/", "de": "/yoburosan-review/de/", "pt": "/yoburosan-review/pt/", "it": "/yoburosan-review/it/", "ru": "/yoburosan-review/ru/", "ko": "/yoburosan-review/ko/", "zh-CN": "/yoburosan-review/zh-CN/", "zh-TW": "/yoburosan-review/zh-TW/", "ar": "/yoburosan-review/ar/", "hi": "/yoburosan-review/hi/", "th": "/yoburosan-review/th/", "vi": "/yoburosan-review/vi/", "id": "/yoburosan-review/id/", "ms": "/yoburosan-review/ms/", "tr": "/yoburosan-review/tr/", "nl": "/yoburosan-review/nl/", "pl": "/yoburosan-review/pl/"};
+  var langs = navigator.languages || [navigator.language || 'ja'];
+  for (var i = 0; i < langs.length; i++) {
+    var code = langs[i].toLowerCase();
+    if (map[code]) { location.replace(map[code]); return; }
+    var base = code.split('-')[0];
+    if (base === 'zh') {
+      if (code.indexOf('tw') > -1 || code.indexOf('hant') > -1) {
+        location.replace(map['zh-TW']); return;
+      }
+      location.replace(map['zh-CN']); return;
+    }
+    if (map[base]) { location.replace(map[base]); return; }
+  }
+  location.replace(map['en']);
+})();
+</script>
+<noscript><meta http-equiv="refresh" content="0;url=/yoburosan-review/ja/"></noscript>
+</head><body></body></html>
