@@ -51,9 +51,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://img.youtube.com">
   <link rel="preconnect" href="https://www.youtube.com">
-  <link rel="stylesheet" href="/yoburosan-review/css/style.css?v=1772253324">
-  <link rel="stylesheet" href="../../css/style.css?v=1772253324">
-  <link rel="stylesheet" href="../css/style.css?v=1772253324">
+  <link rel="stylesheet" href="/yoburosan-review/css/style.css?v=1772255774">
+  <link rel="stylesheet" href="../../css/style.css?v=1772255774">
+  <link rel="stylesheet" href="../css/style.css?v=1772255774">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4M0OYPX8PM"></script>
   <script>
@@ -256,16 +256,20 @@
    方法2: oEmbed API (非公開/削除チェック)
    方法3: サムネイル画像サイズチェック */
 
-/* 方法1: 画像読み込みエラー */
-document.querySelectorAll('.article-card img, .featured-img img, .popular-thumb img, .related-card-img img').forEach(function(img){
+/* 方法1: 画像読み込みエラー（サイドバーは除外: ランク崩れ防止） */
+document.querySelectorAll('.article-card img, .featured-img img, .related-card-img img').forEach(function(img){
   img.onerror = function(){
-    var card = this.closest('.article-card, .featured, .popular-item, .related-card');
+    var card = this.closest('.article-card, .featured, .related-card');
     if(card) card.style.display='none';
   };
   if(img.complete && img.naturalWidth === 0){
-    var card = img.closest('.article-card, .featured, .popular-item, .related-card');
+    var card = img.closest('.article-card, .featured, .related-card');
     if(card) card.style.display='none';
   }
+});
+/* サイドバー: 画像エラー時はプレースホルダに差替え（非表示にしない） */
+document.querySelectorAll('.popular-thumb img').forEach(function(img){
+  img.onerror = function(){ this.src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="67" fill="%23333"><rect width="120" height="67"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%23666" font-size="12">No Image</text></svg>'; };
 });
 
 /* 方法2: YouTube oEmbed APIで非公開チェック
@@ -279,9 +283,9 @@ document.querySelectorAll('.article-card img, .featured-img img, .popular-thumb 
     fetch('https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=' + vid + '&format=json')
       .then(function(r){
         if(!r.ok){
-          /* 非公開/削除済み: この動画IDを含む全要素を非表示 */
+          /* 非公開/削除済み: この動画IDを含む全要素を非表示（サイドバー除外） */
           document.querySelectorAll('img[src*="' + vid + '"]').forEach(function(i){
-            var card = i.closest('.article-card, .featured, .popular-item, .related-card');
+            var card = i.closest('.article-card, .featured, .related-card');
             if(card) card.style.display='none';
           });
           /* iframeも非表示 */
