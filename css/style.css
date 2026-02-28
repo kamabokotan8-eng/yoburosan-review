@@ -359,7 +359,7 @@ img { max-width: 100%; display: block; }
 /* ═══════════════════════════════════════
    SIDEBAR — 驚異の部屋 (Wunderkammer)
    ═══════════════════════════════════════ */
-.sidebar { display: flex; flex-direction: column; gap: 28px; }
+.sidebar { display: flex; flex-direction: column; gap: 28px; position: sticky; top: 80px; align-self: start; max-height: calc(100vh - 100px); overflow-y: auto; }
 .sidebar-box {
   background: var(--surface); border: 1px solid var(--border-ornament);
   overflow: hidden; position: relative;
@@ -503,14 +503,14 @@ img { max-width: 100%; display: block; }
 }
 .share-btn:hover { opacity: 0.8; color: #fff; transform: scale(1.1); }
 .share-twitter { background: #000000; }
-.share-facebook { background: #0866FF; }
+.share-facebook { background: #1877F2; }
 .share-whatsapp { background: #25D366; }
-.share-telegram { background: #26A5E4; }
-.share-line { background: #06C755; }
+.share-telegram { background: #2AABEE; }
+.share-line { background: #00B900; }
 .share-reddit { background: #FF4500; }
-.share-pinterest { background: #BD081C; }
+.share-pinterest { background: #E60023; }
 .share-weibo { background: #E6162D; }
-.share-kakao { background: #FEE500; color: #191919; }
+.share-kakao { background: #FEE500; color: #3C1E1E; }
 .share-vk { background: #0077FF; }
 .share-zalo { background: #0068FF; }
 .share-copy { background: var(--surface3); color: var(--text); border: 1px solid var(--border); }
